@@ -179,3 +179,15 @@ void loop() {
     hal_power_check_sleep();
     vTaskDelay(1);
 }
+
+#ifdef PLATFORM_EMULATOR
+int main(int argc, char *argv[]) {
+    setup();
+    while (true) {
+        hal_display_update_ui(); // Poll events and update UI on main thread
+        loop();
+        delay(16); // ~60 FPS cap to save CPU
+    }
+    return 0;
+}
+#endif

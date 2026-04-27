@@ -24,6 +24,11 @@ lib/font/embedded_boot_font.h
 
 # Personal files
 david/
-
-# TeamIDE local chat history
 .teamide/chatHistory/
+
+# Emulator files
+sdcard/plugins/lib/*.luac
+sdcard/crosslua*
+sdcard/settings.json
+sdcard/cache/
+sdcard/**/*_progress
